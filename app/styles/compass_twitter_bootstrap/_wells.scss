@@ -1,0 +1,158 @@
+//
+// Wells
+// --------------------------------------------------
+
+
+// Base class
+.well {
+  min-height: 20px;
+  padding: 19px;
+  margin-bottom: 20px;
+  background-color: $wellBackground;
+  border: 1px solid darken($wellBackground, 7%);
+  @include border-radius(10px);
+  @include box-shadow(0 0 2px rgba(0,0,0,1));
+  blockquote {
+    border-color: #ddd;
+    border-color: rgba(0,0,0,.15);
+  }
+}
+
+// Sizes
+.well-large {
+  padding: 24px;
+  @include border-radius(10px);
+}
+.well-small {
+  padding: 12px 14px;
+  @include border-radius(8px);
+}
+
+// Content Boxes
+.box-content {
+  position: relative;
+  border: 4px solid darken($wellBackground, 7%);
+  color: $grayLight;
+  font-size: $baseFontSize * 1.1;
+  min-height: 265px !important;
+  h2 {
+    text-align: center;
+    font-size: $baseFontSize * 2.6;
+    margin-top: 0;
+  }
+  .btn-custom {
+    position: absolute;
+    bottom: 19px;
+  }
+}
+
+// Content Boxes (Logged Out)
+.box-content.tournaments h2,
+.box-content.leaderboard h2 {
+  color: #ffb714;
+}
+.box-content.join {
+  h2 {
+    font-size: $baseFontSize * 3;
+  }
+  li {
+    font-size: $baseFontSize * 1.2;
+    line-height: $baseLineHeight * 1.2;
+  }
+}
+.box-content.brain-arcade {
+  background: url(../assets/img/brain.gif) no-repeat 330px 15px;
+  h2 {
+    text-align: left;
+    font-size: $baseFontSize * 3.2;
+    color: #672d91;
+  }
+  h4 {
+    width: 70%;
+    color: $gray;
+    font-family: $sansFontFamily;
+    font-size: $baseFontSize * 1.8;
+    line-height: $baseLineHeight * 1.2;
+  }
+  p {
+    font-size: $baseFontSize * 1.3;
+  }
+}
+.box-content.lockedOut {
+  background: url(../assets/img/lock.gif) no-repeat 19px 15px;
+  h2 {
+    &:first-child {
+      color: #672d91;
+      text-align: left;
+      margin-left: 108px;
+    }    
+  } 
+  p {
+    text-align: left;
+    margin-left: 108px;
+  }
+}
+
+// Content Boxes (Logged In)
+#home-page-loggedIn {
+  .box-content.tournaments h2,
+  .box-content.leaderboard h2 {
+    font-size: $baseFontSize * 1.8;
+    line-height: $baseFontSize * 2;
+  }
+  .box-content {
+    min-height: 208px !important;
+    .btn-custom {
+      max-width: 246px;
+    }
+  }
+  .box-content.leaderboard h2 span {
+    display: block;
+    color: #25aae1;
+  }
+  .box-content.brain-arcade {
+    background: url(../assets/img/brain-small.gif) no-repeat 210px 15px;
+    height: 246px;
+    h2 {
+      font-size: $baseFontSize * 2.2; 
+    }
+    h4 {
+      font-size: $baseFontSize * 1.2;
+      line-height: $baseLineHeight * 1;
+      width: 85%;
+    }
+    p {
+      font-size: $baseFontSize * 0.9;
+      line-height: 1.2;
+    }
+  }
+  .box-content.activities {
+    background: url(../assets/img/brain-green.gif) no-repeat 214px 15px;
+    height: 230px;
+    h2 {
+      text-align: left;
+      font-size: $baseFontSize * 2.2;
+      color: #8bc73f; 
+    }
+    h4 {
+      font-size: $baseFontSize * 1.2;
+      width: 85%;
+      color: $gray;
+      font-family: $sansFontFamily;
+    }
+    p {
+      font-size: $baseFontSize * 0.9;
+      line-height: 1.2;
+    }
+  }
+}
+#arcade-page-loggedIn {
+  .box-content {
+    .btn-custom {
+      max-width: 245px;
+    }
+  }
+  .box-content.tournaments {
+    min-height: 260px !important;
+  }
+}

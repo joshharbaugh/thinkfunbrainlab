@@ -1,0 +1,167 @@
+/* HEADER 
+------------------------------- */
+
+.header {
+  margin: 20px auto;
+}
+
+.branding {
+  width: 445px;
+
+  .logo {
+    float: left;
+    display: block;
+    margin: 0 8px 8px 0;
+    padding: 0;
+  }
+}
+
+.social-links {
+  float: right;
+  width: 100%;
+  margin-bottom: 22px;
+
+  .icon {
+    float: right;
+    margin: 0 0 0 10px;
+  }
+  img {
+    width: 32px;
+    height: 33px;
+    background-color: #ccc;
+    border: none;
+  }
+}
+
+.account-login .controls-row {
+  font-size: 11px;
+  label {
+    font-size: 11px;
+    margin-left: 5px;
+  }
+  label.checkbox {
+    margin-top: 0;
+  }
+  .forgotPasswordLink {
+    padding-top: 5px;
+    margin-left: 60px;
+  }
+}
+
+.account-login .account-menu {
+  float: right;
+}
+
+.page-header-custom {
+  color: #0280c9;
+  background-color: #e5f5fa;
+  border: none;
+  -webkit-box-shadow: none;
+     -moz-box-shadow: none;
+          box-shadow: none;
+  h1 {
+    text-align: right;
+    font-size: 48px; line-height: 52px;
+  }
+  p {
+    width: 40%;
+  } 
+}
+.page-header-custom-dark {
+  background-color: #e3deef;
+  color: #672c90;
+  h1 {
+    color: #672c90;
+  }
+}
+.btn-custom {
+  max-width: 406px;
+  width: 100%;
+  font-size: 28px;
+  font-weight: bold;
+  text-transform: uppercase;
+  padding: 12px 0;
+  display: block;
+  @include buttonBackground(#4e90cd, #2182c5, $white, none);
+  border: 4px solid darken(#2182c5, 7%);
+  @include border-radius(9px);
+  @include box-shadow(none);
+}
+.btn-orange {
+  @include buttonBackground(#faa73f, #f8991d, $white, none);
+  border: 4px solid darken(#f8991d, 7%);
+}
+.btn-purple {
+  @include buttonBackground(#7a4a99, #692e8e, $white, none);
+  border: 4px solid darken(#692e8e, 7%);
+}
+.btn-green {
+  @include buttonBackground(#8ec859, #75bf43, $white, none);
+  border: 4px solid darken(#75bf43, 7%);
+}
+.btn-flat {
+  @include buttonBackground(#25aae1, #25aae1, $white, none);
+  font-size: 20px;
+  padding: 10px 30px;
+  color: #fff;
+}
+.btn-flat:hover {
+  background: darken(#25aae1, 5%);
+}
+
+
+/* ACCOUNT / REGISTER PAGE
+------------------------------- */
+
+#account-page input,
+#account-page select,
+#register-page input,
+#register-page select {
+  margin-bottom: 32px;
+}
+#register-page {
+  .page-header-custom p {
+    width: 50%;
+  }
+}
+
+
+/* ARCADE PAGE
+------------------------------- */
+
+.gameThumbnail {
+  background-color: $grayLighter;
+  @include border-radius(6px);
+  padding: 10px;
+  margin-left: 5px;
+  margin-right: 5px;
+  margin-bottom: 20px;
+  position: relative;
+  width: 120px;
+}
+.gameThumbnail span {
+  position: absolute;
+  right: 0;
+  bottom: 0;
+}
+.gameThumbnail .active {
+  cursor: pointer;
+}
+
+/* MODALS
+------------------------------- */
+
+.modal-body button {
+  margin-top: 1em;
+}
+#JoinNowModal {
+  text-align: center;
+}
+#JoinNowModal h3 {
+  font-size: 36px;
+  margin-bottom: 0.5em;
+}
+#JoinNowModal h4 {
+  font-size: 24px;
+  margin-top: 1em;
+}

@@ -1,0 +1,67 @@
+div.container#home-page-loggedOut(data-ng-show="authenticated == false")
+
+  div.row-fluid
+
+    div.well.box-content.span6.join
+        h2 Joining is FREE!
+        ul
+            li Compete in weekly tournaments
+            li Access our Brain Fitness games &amp; tools
+            li Get your monthly Brain Bulletin
+            li Receive a Birthday Brain Boost
+        a.btn.btn-custom#joinNowBtn(data-toggle="modal", bl-dialog-modal="/views/partials/modals/joinNow.html", bl-dialog-context="JoinNow") Join Now!
+
+    div.well.box-content.span6.tournaments
+        h2 Weekly Tournament
+        img(src="assets/img/banner-chocolate-fix.jpg")
+        a.btn.btn-custom.btn-orange#competeBtn Compete!
+
+  div.row-fluid
+
+    div.well.box-content.span6.brain-arcade
+        h2 Brain Arcade
+        h4 Have fun &amp; Give Your Brain a Healthy Snack!
+        p Join to play games &amp; track your personal progress. 
+        a.btn.btn-custom.btn-purple#playNowBtn(href="/#/arcade") Play Now!
+
+    div.well.box-content.span6.video
+
+div.container#home-page-loggedIn(data-ng-show="authenticated == true")
+
+  div.row-fluid
+
+    div.well.box-content.span4.leaderboard(data-ng-controller="LeaderboardCtrl")
+        h2 Weekly Tournament
+            span Leaderboard
+        p CF Blitz Fill The Tray Sweet Pack
+        h4 Ends In: 4 days 5 hrs 21 mins
+
+        table.table.table-hover.table-striped#leaderboard-list
+            tr(ng-repeat="player in leaderboard")
+                td.player-id {{player.idPlayer}}
+                td.player-name {{player.userName}}
+                td.player-time {{player.best_time}}
+
+    div.span4
+        div.row-fluid
+            div.well.box-content.span12.tournaments
+                h2 Weekly Tournament
+                img(src="assets/img/weekly-tournament-chocolate-fix.jpg")
+                a.btn.btn-custom.btn-orange#competeBtn Compete!
+        div.row-fluid
+            div.well.box-content.span12.brain-arcade
+                h2 Brain Arcade
+                h4 Have fun &amp; Give Your Brain a Healthy Snack!
+                p Track your scores &amp; personal progress by registering. 
+                a.btn.btn-custom.btn-purple#playNowBtn(href="/#/arcade") Play Now!
+        div.row-fluid
+            div.well.box-content.span12.activities
+                h2 Activities
+                h4 Get more snack sized brainteasers to play offline
+                p Browse &amp; print PDF files &amp; other resources 
+                a.btn.btn-custom.btn-green#playNowBtn(href="/#/activities") Browse!
+
+    div.span4
+        div.row-fluid
+            div.well.box-content.span12
+                h2 Ad Space

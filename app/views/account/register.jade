@@ -1,0 +1,77 @@
+div.container#register-page
+
+    div.well.well-small.page-header.page-header-custom
+        p.pull-left Sign up for Brain Lab for full access and tracking features to ALL of our games. Play in the featured tournament, receive our Brain Bulletin and get your very own Birthday Boost!
+        h1.text-right Register Account
+
+    div.container
+
+        span.required * denotes a required field
+
+        form(id="register-account", name="register-account", data-ng-submit="registerPlayer()")
+          fieldset
+            div.controls-group
+                div.controls.controls-row
+                    label.span4(for="userName") Username
+                        span.required *
+                    label.span4(for="pwd") Password
+                        span.required *
+                
+                div.controls.controls-row
+                    input.span4(type="text", name="userName", id="userName", value="", required)
+                    input.span4(type="password", name="pwd", id="pwd", value="", required)
+
+            div.controls-group
+                div.controls.controls-row
+                    label.span4(for="firstName") First Name
+                        span.required *                    
+                    label.span4(for="lastName") Last Name
+                        span.required *
+                
+                div.controls.controls-row
+                    input.span4(type="text", name="firstName", id="firstName", value="", required)
+                    input.span4(type="text", name="lastName", id="lastName", value="", required)
+
+            div.controls-group
+                div.controls.controls-row
+                    label.span4(for="gender") Gender
+                        span.required *
+                
+                div.controls.controls-row
+                    select.span4(name="gender", required)
+                        option(value="female", selected) Female
+                        option(value="male") Male
+
+            div.controls-group
+                div.controls.controls-row
+                    label.span4(for="email") Email
+                        span.required *
+                    label.span4(for="emailParent", data-ng-show="age < 13 || !age") Parent's Email
+                        span.required *
+
+                div.controls.controls-row
+                    input.span4(type="text", name="email", id="email", value="", required)
+                    input.span4(type="text", name="emailParent", id="emailParent", value="", data-ng-show="age < 13 || !age")
+
+            div.controls-group
+                div.controls.controls-row
+                    label.span4(for="zipCode") Zip / Postal Code
+                        span.required *                        
+                    label.span4(for="country") Country
+                        span.required *
+                    
+                div.controls.controls-row
+                    input.span4(type="text", name="zipCode", id="zipCode", required)
+                    select.span4(name="idCountry", id="idCountry", data-ng-model="country", ng-options="c.name for c in countries", required)
+          fieldset
+            div.controls-group
+                div.controls.controls-row
+                    label.span8(for="DOB") Birthday, so we can send you a Birthday Brain Boost!
+                        span.required *                        
+                
+                div.controls.controls-row
+                    select.span4(name="month", id="month", data-ng-model="birthMonth", ng-options="m.name for m in months", required)                       
+                    input.span2(type="text", name="day", id="day", data-ng-model="birthDay", placeholder="ex. 01", required)
+                    input(type="hidden", name="year", id="year", data-ng-model="birthYear", value="{{user.birthYear}}", required)
+                    input(type="hidden", name="DOB", id="DOB", value="{{birthYear}}/{{birthMonth.value}}/{{birthDay}}")
+          button.btn.btn-flat(type="submit") Register

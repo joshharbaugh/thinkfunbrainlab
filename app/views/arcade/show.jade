@@ -1,0 +1,50 @@
+div.container#arcade-page-loggedOut(data-ng-show="authenticated == false")
+
+  div.well.well-small.page-header.page-header-custom.page-header-custom-dark
+    p.pull-left Try out a game without signing up. Like what you see? Join Brain Lab to unlock our full selection of brain building games, activities & tracking features.
+    h1.text-right Brain Arcade
+
+  div.container-fluid
+
+    div.gameThumbnail.span2(ng-repeat="game in previewGames")
+      a(data-ng-click="startGame()", data-ng-class="{true:'active',false:'inactive'}[game.active]")
+        img(src='{{game.thumbnail}}')}}
+        span.status(data-ng-show="game.active == false")
+          img(src="assets/img/locked-icon.png")
+
+  div.row-fluid
+
+    div.well.box-content.span6.lockedOut
+      h2 Locked Out?
+      p Join to unlock all game play, tracking tools, tournaments & more.
+      h2 Joining is FREE!
+      a.btn.btn-custom#joinNowBtn(data-toggle="modal", bl-dialog-modal="/views/partials/modals/joinNow.html", bl-dialog-context="JoinNow") Join Now!
+
+    div.well.box-content.span6.tournaments
+      h2 Weekly Tournament
+      img(src="assets/img/banner-chocolate-fix.jpg")
+      a.btn.btn-custom.btn-orange#competeBtn Compete!
+
+div.container#arcade-page-loggedIn(data-ng-show="authenticated == true")
+
+  div.well.well-small.page-header.page-header-custom.page-header-custom-dark
+    p.pull-left Track your play history and sharpen your thinking skills! Get ready to compete in our Weekly Tournament, picked from the games available here.
+    h1.text-right Brain Arcade
+
+  div.container-fluid
+
+    div.gameThumbnail.span2(ng-repeat="game in games")
+      a(data-ng-click="startGame()", data-ng-class="{true:'active',false:'inactive'}[game.active]")
+        img(src="{{game.thumbnail}}")
+        span.status(data-ng-show="game.active == false")
+          img(src="assets/img/locked-icon.png")
+
+  div.row-fluid
+
+    div.well.box-content.span4.tournaments
+      h2 Weekly Tournament
+      img(src="assets/img/weekly-tournament-chocolate-fix.jpg")
+      a.btn.btn-custom.btn-orange#competeBtn Compete!
+
+    div.well.box-content.span8
+      h2 Ad Space

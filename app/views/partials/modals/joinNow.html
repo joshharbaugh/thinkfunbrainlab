@@ -1,0 +1,14 @@
+
+<div data-ng-controller="ModalHeaderCtrl" class="modal-header">
+  <button type="button" data-dismiss="true" aria-hidden="true" data-ng-click="close()" class="close">x</button>
+</div>
+<div data-ng-controller="JoinNow" class="modal-body">
+  <h3>Join Brain Lab for FREE</h3>
+  <p>Register to play in our Brain Lab Tournaments & sign-up for our world renowned Puzzle Newsletter & other puzzling treats.</p>
+  <h4>Date of Birth</h4>
+  <form data-ng-submit="validatePlayerAge()" id="validatePlayerAgeForm">
+    <select name="verifyMonth" data-ng-model="verifyMonth" ng-options="m.name for m in months" class="span2"></select>
+    <input type="text" maxlength="4" name="verifyYear" data-ng-model="verifyYear" placeholder="ex. 1999" class="span2"/>
+    <button type="submit" class="btn btn-primary">Continue Registration</button>
+  </form>
+</div>

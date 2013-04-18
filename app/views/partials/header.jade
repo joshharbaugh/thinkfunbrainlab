@@ -1,0 +1,61 @@
+div.header.container
+
+  div.pull-left.branding
+
+    div.logo
+      a(href="/")
+        img(src="assets/img/logo-thinkfun.gif")
+
+    div.logo
+      img(src="assets/img/logo-brainlab.gif")
+
+    div.tagline
+      img(src="assets/img/tagline.gif")
+
+  div.pull-right
+
+    div.social-links
+
+      div.icon.twitter-icon
+        a(href="#")
+          img(src="")
+      div.icon.googleplus-icon
+        a(href="#")
+          img(src="")
+      div.icon.facebook-icon
+        a(href="#")
+          img(src="")
+       
+    div.account-login(data-ng-controller="LoginCtrl")
+
+      form.form-inline(data-ng-submit="loginUser()", data-ng-hide="authenticated")
+
+        div.controls
+
+          input(type="text", name="userName", data-ng-model="username", class="input-small span2", placeholder="Username", required)
+          input(type="password", name="pwd", data-ng-model="password", class="input-small span2", placeholder="Password", required)
+          button.btn.btn-small(type="submit") Log In
+
+        div.controls.controls-row
+        
+          label.checkbox.pull-left
+            input(type="checkbox", value="true", name="saveUserSession", checked="checked")
+            | Remember me
+
+          span.forgotPasswordLink.pull-left
+            a(href="#") Forgot my password           
+
+      div.account-menu(data-ng-show="authenticated")
+        div.login
+          span.dropdown#account-menu-dropdown
+            a.dropdown-toggle(data-toggle="dropdown", href="#")
+              | Hello, {{ user.firstname }} {{ user.lastname }}
+              span.caret
+            ul.dropdown-menu
+              li
+                a(href="/#/account") Account
+              li
+                a(href="#") Settings
+              li.divider
+              li
+                a(ng-click="logoutUser(user)", href="#") Log Out

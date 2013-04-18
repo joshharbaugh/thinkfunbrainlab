@@ -1,0 +1,32 @@
+
+<div id="home-page" data-ng-show="authenticated == false" class="container">
+  <div class="row-fluid">
+    <div class="well box-content span6 join">
+      <h2>Joining is FREE!</h2>
+      <ul>
+        <li>Compete in weekly tournaments</li>
+        <li>Access our Brain Fitness games &amp; tools</li>
+        <li>Get your monthly Brain Bulletin</li>
+        <li>Receive a Birthday Brain Boost</li>
+      </ul><a id="joinNowBtn" data-toggle="modal" bl-dialog-modal="/views/partials/modals/joinNow.html" bl-dialog-context="JoinNow" class="btn btn-custom">Join Now!</a>
+    </div>
+    <div class="well box-content span6 tournaments">
+      <h2>Weekly Tournament</h2><a id="competeBtn" class="btn btn-custom">Compete!</a>
+    </div>
+  </div>
+  <div class="row-fluid">
+    <div class="well box-content span6 brain-arcade">
+      <h2>Brain Arcade</h2>
+      <h4 style="width:70%">Have fun &amp; Give Your Brain a Healthy Snack!</h4>
+      <p>Join to play games &amp; track your personal progress. </p><a id="playNowBtn" href="/#/arcade" class="btn btn-custom">Play Now!</a>
+    </div>
+    <div class="well box-content span6 video">
+      <!-- what is video to come-->
+    </div>
+  </div>
+</div>
+<div id="home-page" data-ng-show="authenticated == true" class="container">
+  <div class="row-fluid">
+    <h2>Logged in user homepage</h2>
+  </div>
+</div>

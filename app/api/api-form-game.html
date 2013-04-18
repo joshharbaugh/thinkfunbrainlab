@@ -1,0 +1,60 @@
+<html>
+<head>
+<style>
+.param{display:inline;margin:10px;}
+input{width:250px;}
+form{width:800px;}
+</style>	
+</head>	
+<body>	
+<form method="post" action="api.php">
+<!--input type="hidden" value="API_KEY" name="API_KEY"/-->
+<input type="text" name="API_VER" value="1.0"/><div class="param"></div><br />
+<input type="text" name="API_KEY" value="xxx"/><div class="param"></div><br />
+<input type="text" name="API_LIBRARY" value="Game"/><div class="param"></div><br />
+<input type="text" name="API_METHOD"/><div class="param"></div><br />
+<input type="text" name="start"/><div class="param"></div><br />
+<input type="text" name="count"/><div class="param"></div><br />
+<input type="text" name="random"/><div class="param"></div><br />
+<input type="text" name="id"/><div class="param"></div><br />
+<input type="text" name="idTournament"/><div class="param"></div><br />
+<input type="text" name="idGameGroup"/><div class="param"></div><br />
+<input type="text" name="idGame"/><div class="param"></div><br />
+<input type="text" name="idGameLevel"/><div class="param"></div><br />
+<input type="text" name="idGameType"/><div class="param"></div><br />
+<input type="text" name="idPlayer"/><div class="param"></div><br />
+<input type="text" name="idChallenge"/><div class="param"></div><br />
+<input type="text" name="idChallengeSession"/><div class="param"></div><br />
+<input type="text" name="idGameSession"/><div class="param"></div><br />
+<input type="text" name="points"/><div class="param"></div><br />
+<input type="text" name="awards"/><div class="param"></div><br />
+<input type="text" name="solved"/><div class="param"></div><br />
+<input type="text" name="solves"/><div class="param"></div><br />
+<input type="text" name="incorrects"/><div class="param"></div><br />
+<input type="text" name="skipped"/><div class="param"></div><br />
+<input type="text" name="skips"/><div class="param"></div><br />
+<input type="text" name="resets"/><div class="param"></div><br />
+<input type="text" name="dtStartTime"/><div class="param"></div>(UTC) [YYYY-MM-DD hh:mm:ss.sss]<br />
+<input type="text" name="dtEndTime"/><div class="param"></div>(UTC) [YYYY-MM-DD hh:mm:ss.sss]<br />
+<input style="margin:10px 0 0 0;width:100px"type="submit" value="submit"name="submit" id="submit"></form>
+</body>
+
+<script src="/js/vendor/jquery-1.8.0.min.js" type="text/javascript" charset="utf-8"></script>
+
+<script>
+
+$(document).ready(function() {
+       
+	
+	$('.param').each(function(index) {
+		
+    	$(this).html(" "+$(this).prev().attr("name")+" ");
+	});
+	
+	
+
+});
+      
+
+</script>
+</html>

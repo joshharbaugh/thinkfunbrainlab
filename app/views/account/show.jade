@@ -1,0 +1,121 @@
+div.container#account-page
+
+    div.well.well-small.page-header.page-header-custom
+        p.pull-left Update your profile and subscriptions here.
+        h1.text-right My Account
+
+    pre {{ user }}
+
+    div.container
+
+        h2 Account Profile
+
+        span.required * denotes a required field
+
+        form(id="account-profile", name="account-profile", data-ng-submit="updatePlayer()")
+            fieldset
+                div.controls-group
+                    div.controls.controls-row
+                        label.span4(for="username") Username
+                            span.required *
+                    
+                    div.controls.controls-row
+                        input.span4(type="text", name="username", id="username", value="{{ user.username }}", data-ng-model="user.username")
+
+                div.controls-group
+                    div.controls.controls-row
+                        label.span4(for="firstname") First Name
+                            span.required *                    
+                        label.span4(for="lastname") Last Name
+                            span.required *
+                    
+                    div.controls.controls-row
+                        input.span4(type="text", name="firstname", id="firstname", value="{{ user.firstname }}", data-ng-model="user.firstname")
+                        input.span4(type="text", name="lastname", id="lastname", value="{{ user.lastname }}", data-ng-model="user.lastname")
+
+                div.controls-group
+                    div.controls.controls-row
+                        label.span4(for="gender") Gender
+                            span.required *
+                    
+                    div.controls.controls-row
+                        select.span4(name="gender", data-ng-model="user.gender")
+                            option(value="female") Female
+                            option(value="male") Male
+
+                div.controls-group
+                    div.controls.controls-row
+                        label.span4(for="useremail") Email
+                            span.required *
+
+                    div.controls.controls-row
+                        input.span4(type="text", name="useremail", id="useremail", value="{{ user.useremail }}")
+
+                div.controls-group
+                    div.controls.controls-row
+                        label.span4(for="zipcode") Zip / Postal Code
+                            span.required *                        
+                        label.span4(for="country") Country
+                            span.required *
+                        
+                    div.controls.controls-row
+                        input.span4(type="text", name="zipcode", id="zipcode", value="{{ user.zipcode }}", data-ng-model="user.zipcode")
+                        select.span4(name="idCountry", id="idCountry", data-ng-model="userCountry", ng-options="c.name for c in countries", required)
+            fieldset
+                div.controls-group
+                    div.controls.controls-row
+                        label.span8(for="dob") Birthday, so we can send you a Birthday Brain Boost!
+                            span.required *                        
+                    
+                    div.controls.controls-row
+                        select.span4(name="month", ng-options="m.name for m in months", data-ng-model="userBirthMonth")                      
+                        input.span2(type="text", name="day", id="day", data-ng-model="userBirthDay")
+            button.btn.btn-flat(type="submit") Save changes
+        
+        hr
+
+        h2 Change My Password
+
+        form(id="account-password-change", name="account-password-change", data-ng-submit="changePassword()")
+            fieldset
+                div.controls-group
+                    div.controls.controls-row
+                        label.span4(for="pwd") Current Password
+                            span.required *
+                    div.controls.controls-row
+                        input.span4(type="password", name="pwd", id="pwd", ng-model="pwd", value="")
+                div.controls-group
+                    div.controls.controls-row
+                        label.span4(for="newPwd") New Password
+                            span.required *                    
+                        label.span4(for="confirmNewPwd") Confirm New Password
+                            span.required *                    
+                    div.controls.controls-row
+                        input.span4(type="password", name="newPwd", id="newPwd", ng-model="newPwd", value="")
+                        input.span4(type="password", name="confirmNewPwd", id="confirmNewPwd", ng-model="confirmNewPwd", value="")
+            button.btn.btn-flat(type="submit") Update Password
+
+        hr
+
+        h2 Manage My Subscriptions
+
+        form(name="account-subscriptions", data-ng-submit="updateSubscriptions()")
+            fieldset
+                div.controls-group
+                    div.controls.controls-row
+                        label.checkbox.span8
+                            input(type="checkbox")
+                            | Puzzling Pastimes Newsletter
+                    div.controls.controls-row
+                        label.checkbox.span8
+                            input(type="checkbox")
+                            | Email Challenge of the Day
+                    div.controls.controls-row
+                        label.checkbox.span8
+                            input(type="checkbox")
+                            | Receive a Birthday Brain Boost
+                    div.controls.controls-row
+                        label.checkbox.span8
+                            input(type="checkbox")
+                            | Concerned Adult & Teacher Newsletter
+            button.btn.btn-flat(type="submit") Save subscriptions

@@ -1,0 +1,38 @@
+
+<div class="header container">
+  <div class="pull-left branding">
+    <div class="logo"><a href="/"><img src="assets/img/logo-thinkfun.gif"/></a></div>
+    <div class="logo"><img src="assets/img/logo-brainlab.gif"/></div>
+    <div class="tagline"><img src="assets/img/tagline.gif"/></div>
+  </div>
+  <div class="pull-right">
+    <div class="social-links">
+      <div class="icon twitter-icon"><a href="#"><img src=""/></a></div>
+      <div class="icon googleplus-icon"><a href="#"><img src=""/></a></div>
+      <div class="icon facebook-icon"><a href="#"><img src=""/></a></div>
+    </div>
+    <div data-ng-controller="LoginCtrl" class="account-login">
+      <form data-ng-submit="loginUser()" data-ng-hide="authenticated" class="form-inline">
+        <div class="controls">
+          <input type="text" name="userName" data-ng-model="username" placeholder="Username" required="required" class="input-small span2"/>
+          <input type="password" name="pwd" data-ng-model="password" placeholder="Password" required="required" class="input-small span2"/>
+          <button type="submit" class="btn btn-small">Log In</button>
+        </div>
+        <div class="controls controls-row">
+          <label class="checkbox pull-left">
+            <input type="checkbox" value="true" name="saveUserSession" checked="checked"/>Remember me
+          </label><span class="forgotPasswordLink pull-left"><a href="#">Forgot my password           </a></span>
+        </div>
+      </form>
+      <div data-ng-show="authenticated" class="account-menu">
+        <div class="login"><span id="account-menu-dropdown" class="dropdown"><a data-toggle="dropdown" href="#" class="dropdown-toggle">Hello, {{ user.firstname }} {{ user.lastname }}<span class="caret"></span></a>
+            <ul class="dropdown-menu">
+              <li><a href="/#/account">Account</a></li>
+              <li><a href="#">Settings</a></li>
+              <li class="divider"></li>
+              <li><a ng-click="logoutUser(user)" href="#">Log Out</a></li>
+            </ul></span></div>
+      </div>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,145 @@
+
+<!--include ../../views/partials/header.html-->
+<div id="account-page" class="container">
+  <div class="well well-small page-header page-header-custom">
+    <p class="pull-left">Update your profile and subscriptions here.</p>
+    <h1 class="text-right">My Account</h1>
+  </div>
+  <pre>{{ user }}</pre>
+  <div class="container">
+    <h2>Account Profile</h2><span class="required">* denotes a required field</span>
+    <form id="account-profile" name="account-profile" data-ng-submit="updatePlayer()">
+      <fieldset>
+        <div class="controls-group">
+          <div class="controls controls-row">
+            <label for="username" class="span4">Username<span class="required">*</span></label>
+          </div>
+          <div class="controls controls-row">
+            <input type="text" name="username" id="username" value="{{ user.username }}" class="span4"/>
+          </div>
+        </div>
+        <div class="controls-group">
+          <div class="controls controls-row">
+            <label for="firstname" class="span4">First Name<span class="required">*                    </span></label>
+            <label for="lastname" class="span4">Last Name<span class="required">*</span></label>
+          </div>
+          <div class="controls controls-row">
+            <input type="text" name="firstname" id="firstname" value="{{ user.firstname }}" class="span4"/>
+            <input type="text" name="lastname" id="lastname" value="{{ user.lastname }}" class="span4"/>
+          </div>
+        </div>
+        <div class="controls-group">
+          <div class="controls controls-row">
+            <label for="username" class="span4">Gender<span class="required">*</span></label>
+          </div>
+          <div class="controls controls-row">
+            <select name="gender" class="span4">
+              <option value="Male" selected="selected">Male</option>
+              <option value="Female">Female</option>
+            </select>
+          </div>
+        </div>
+        <div class="controls-group">
+          <div class="controls controls-row">
+            <label for="useremail" class="span4">Email<span class="required">*</span></label>
+          </div>
+          <div class="controls controls-row">
+            <input type="text" name="useremail" id="useremail" value="{{ user.useremail }}" class="span4"/>
+          </div>
+        </div>
+        <div class="controls-group">
+          <div class="controls controls-row">
+            <label for="zipcode" class="span4">Zip / Postal Code<span class="required">*                        </span></label>
+            <label for="country" class="span4">Country<span class="required">*</span></label>
+          </div>
+          <div class="controls controls-row">
+            <input type="text" name="zipcode" id="zipcode" value="{{ user.zipcode }}" class="span4"/>
+            <select name="country" class="span4"> 
+              <option value="United States" selected="selected">United States </option>
+              <option value="United Kingdom">United Kingdom</option>
+            </select>
+          </div>
+        </div>
+      </fieldset>
+      <fieldset>
+        <div class="controls-group">
+          <div class="controls controls-row">
+            <label for="dob" class="span8">Birthday, so we can send you a Birthday Brain Boost!<span class="required">*                        </span></label>
+          </div>
+          <div class="controls controls-row">
+            <select name="month" class="span4">
+              <option>January</option>
+              <option>February</option>
+              <option>March</option>
+              <option>April</option>
+              <option>May</option>
+              <option>June</option>
+              <option>July</option>
+              <option>August</option>
+              <option>September</option>
+              <option>October</option>
+              <option>November</option>
+              <option>December                        </option>
+            </select>
+            <input type="text" name="day" id="day" value="{{ user.day }}" class="span2"/>
+          </div>
+        </div>
+      </fieldset>
+      <button type="submit" class="btn btn-large btn-primary btn-custom">Save changes</button>
+    </form>
+    <hr/>
+    <h2>Change My Password</h2>
+    <form id="account-password-change" name="account-password-change" data-ng-submit="changePassword()">
+      <fieldset>
+        <div class="controls-group">
+          <div class="controls controls-row">
+            <label for="pwd" class="span4">Current Password<span class="required">*</span></label>
+          </div>
+          <div class="controls controls-row">
+            <input type="password" name="pwd" id="pwd" ng-model="pwd" value="" class="span4"/>
+          </div>
+        </div>
+        <div class="controls-group">
+          <div class="controls controls-row">
+            <label for="newPwd" class="span4">New Password<span class="required">*                    </span></label>
+            <label for="confirmNewPwd" class="span4">Confirm New Password<span class="required">*                    </span></label>
+          </div>
+          <div class="controls controls-row">
+            <input type="password" name="newPwd" id="newPwd" ng-model="newPwd" value="" class="span4"/>
+            <input type="password" name="confirmNewPwd" id="confirmNewPwd" ng-model="confirmNewPwd" value="" class="span4"/>
+          </div>
+        </div>
+      </fieldset>
+      <button type="submit" class="btn btn-large btn-primary btn-custom">Update Password</button>
+    </form>
+    <hr/>
+    <h2>Manage My Subscriptions</h2>
+    <form name="account-subscriptions" data-ng-submit="updateSubscriptions()">
+      <fieldset>
+        <div class="controls-group">
+          <div class="controls controls-row">
+            <label class="checkbox span8">
+              <input type="checkbox"/>Puzzling Pastimes Newsletter
+            </label>
+          </div>
+          <div class="controls controls-row">
+            <label class="checkbox span8">
+              <input type="checkbox"/>Email Challenge of the Day
+            </label>
+          </div>
+          <div class="controls controls-row">
+            <label class="checkbox span8">
+              <input type="checkbox"/>Receive a Birthday Brain Boost
+            </label>
+          </div>
+          <div class="controls controls-row">
+            <label class="checkbox span8">
+              <input type="checkbox"/>Concerned Adult & Teacher Newsletter
+            </label>
+          </div>
+        </div>
+      </fieldset>
+      <button type="submit" class="btn btn-large btn-primary btn-custom">Save subscriptions</button>
+    </form>
+  </div>
+</div>

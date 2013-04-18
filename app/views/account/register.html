@@ -1,0 +1,82 @@
+
+<!--include ../../views/partials/header.html-->
+<div id="register-page" class="container">
+  <div class="well well-small page-header page-header-custom">
+    <p class="pull-left">Sign up for Brain Lab for full access and tracking features to ALL of our games. Play in the featured tournament, receive our Brain Bulletin and get your very own Birthday Boost!</p>
+    <h1 class="text-right">Register Account</h1>
+  </div>
+  <div class="container"><span class="required">* denotes a required field</span>
+    <form id="register-account" name="register-account" data-ng-submit="registerPlayer()">
+      <fieldset>
+        <div class="controls-group">
+          <div class="controls controls-row">
+            <label for="userName" class="span4">Username<span class="required">*</span></label>
+            <label for="pwd" class="span4">Password<span class="required">*</span></label>
+          </div>
+          <div class="controls controls-row">
+            <input type="text" name="userName" id="userName" value="" required="required" class="span4"/>
+            <input type="password" name="pwd" id="pwd" value="" required="required" class="span4"/>
+          </div>
+        </div>
+        <div class="controls-group">
+          <div class="controls controls-row">
+            <label for="firstName" class="span4">First Name<span class="required">*                    </span></label>
+            <label for="lastName" class="span4">Last Name<span class="required">*</span></label>
+          </div>
+          <div class="controls controls-row">
+            <input type="text" name="firstName" id="firstName" value="" required="required" class="span4"/>
+            <input type="text" name="lastName" id="lastName" value="" required="required" class="span4"/>
+          </div>
+        </div>
+        <div class="controls-group">
+          <div class="controls controls-row">
+            <label for="gender" class="span4">Gender<span class="required">*</span></label>
+          </div>
+          <div class="controls controls-row">
+            <select name="gender" required="required" class="span4">
+              <option value="female" selected="selected">Female</option>
+              <option value="male">Male</option>
+            </select>
+          </div>
+        </div>
+        <div class="controls-group">
+          <div class="controls controls-row">
+            <label for="email" class="span4">Email<span class="required">*</span></label>
+            <label for="emailParent" data-ng-show="age &lt; 13 || !age" class="span4">Parent's Email<span class="required">*</span></label>
+          </div>
+          <div class="controls controls-row">
+            <input type="text" name="email" id="email" value="" required="required" class="span4"/>
+            <input type="text" name="emailParent" id="emailParent" value="" data-ng-show="age &lt; 13 || !age" class="span4"/>
+          </div>
+        </div>
+        <div class="controls-group">
+          <div class="controls controls-row">
+            <label for="zipCode" class="span4">Zip / Postal Code<span class="required">*                        </span></label>
+            <label for="country" class="span4">Country<span class="required">*</span></label>
+          </div>
+          <div class="controls controls-row">
+            <input type="text" name="zipCode" id="zipCode" required="required" class="span4"/>
+            <select name="idCountry" id="idCountry" required="required" class="span4"> 
+              <option value="1" selected="selected">United States </option>
+              <option value="2">United Kingdom</option>
+            </select>
+          </div>
+        </div>
+      </fieldset>
+      <fieldset>
+        <div class="controls-group">
+          <div class="controls controls-row">
+            <label for="DOB" class="span8">Birthday, so we can send you a Birthday Brain Boost!<span class="required">*                        </span></label>
+          </div>
+          <div class="controls controls-row">
+            <select name="month" id="month" data-ng-model="birthMonth" ng-options="m.name for m in months" required="required" class="span4">                      </select>
+            <input type="text" name="day" id="day" data-ng-model="birthDay" placeholder="ex. 01" required="required" class="span2"/>
+            <input type="hidden" name="year" id="year" data-ng-model="birthYear" value="{{user.birthYear}}" required="required"/>
+            <input type="hidden" name="DOB" id="DOB" value="{{birthYear}}/{{birthMonth.value}}/{{birthDay}}"/>
+          </div>
+        </div>
+      </fieldset>
+      <button type="submit" class="btn btn-large btn-primary btn-custom">Register</button>
+    </form>
+  </div>
+</div>

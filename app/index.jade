@@ -1,0 +1,101 @@
+!!! 5
+//if lt IE 7
+  html.no-js.lt-ie9.lt-ie8.lt-ie7(ng-app='blApp', ng-controller='AppCtrl')  
+//if IE 7
+  html.no-js.lt-ie9.lt-ie8(ng-app='blApp', ng-controller='AppCtrl')  
+//if IE 8
+  html.no-js.lt-ie9(ng-app='blApp', ng-controller='AppCtrl')  
+// [if gt IE 8] <!
+html.no-js(ng-app='blApp', ng-controller='AppCtrl')
+  // <![endif]
+  head
+    meta(charset='utf-8')
+    meta(name='fragment', content='!')
+    meta(http-equiv='X-UA-Compatible', content='IE=edge,chrome=1')
+    title
+    meta(name='description', content='')
+    meta(name='viewport', content='width=device-width')
+    // Place favicon.ico and apple-touch-icon.png in the root directory
+    link(rel='stylesheet', href='styles/main.css')
+    script(src='components/vendor/modernizr.custom.js')
+    //if lt IE 9
+      script(src='components/es5-shim/es5-shim.js')
+      script(src='components/json3/lib/json3.min.js')
+  body.ng-cloak(ng-controller='SiteCtrl')    
+    .header.container
+      .pull-left.branding
+        .logo
+          a(href='/')
+            img(src='assets/img/logo-thinkfun.gif')
+        .logo
+          img(src='assets/img/logo-brainlab.gif')
+        .tagline
+          img(src='assets/img/tagline.gif')
+      .pull-right
+        .social-links
+          .icon.twitter-icon
+            a.fc-webicon.twitter(href='https://twitter.com/TFBrainLab', target='_blank')
+          .icon.googleplus-icon
+            a.fc-webicon.googleplus(href='https://plus.google.com/108542670229733060205', target='_blank')
+          .icon.facebook-icon
+            a.fc-webicon.facebook(href='https://www.facebook.com/ThinkFunBrainLab', target='_blank')
+        .account-login(data-ng-controller='LoginCtrl')
+          form.form-inline(data-ng-submit='loginUser()', data-ng-hide='authenticated')
+            .controls
+              input.input-small.span2(type='text', name='userName', data-ng-model='username', placeholder='Username', required='required')
+              input.input-small.span2(type='password', name='pwd', data-ng-model='password', placeholder='Password', required='required')
+              button.btn.btn-small(type='submit') Log In
+            .controls.controls-row
+              label.checkbox.pull-left
+                input(type='checkbox', value='true', name='saveUserSession', checked='checked')
+                | Remember me
+              span.forgotPasswordLink.pull-left
+                a(style='cursor: pointer;', data-toggle='modal', bl-dialog-modal='/views/partials/modals/sendResetPassword.html', bl-dialog-context='sendResetPassword') Forgot my password
+          .account-menu(data-ng-show='authenticated')
+            .login
+              span#account-menu-dropdown.dropdown
+                a.dropdown-toggle(data-toggle='dropdown', href='#')
+                  | Hello, {{ user.firstname }} {{ user.lastname }}
+                  span.caret
+                ul.dropdown-menu
+                  li
+                    a(href='/#/account') Account
+                  li.divider
+                  li
+                    a(ng-click='logoutUser(user)', href='#') Log Out
+    .container(ng-view='ng-view')
+    script(src='components/vendor/jquery.min.js')
+    script(src='components/vendor/bootstrap.min.js')
+    script(src='components/angular/angular.js')
+    script(src='components/angular-resource/angular-resource.js')
+    script(src='components/angular-cookies/angular-cookies.js')
+    script(src='components/angular-sanitize/angular-sanitize.js')
+    script(src='components/vendor/sessionstorage.js')
+    script(src='components/vendor/jquery.gritter.min.js')
+    script(src='components/vendor/jquery.xml2json.js')    
+    // build:js scripts/scripts.js
+    script(src='scripts/app.js')
+    script(src='scripts/services/Helper.js')
+    script(src='scripts/services/Auth.js')
+    script(src='scripts/services/Routing.js')
+    script(src='scripts/services/User.js')
+    script(src='scripts/controllers/Site.js')
+    script(src='scripts/controllers/App.js')
+    script(src='scripts/controllers/Main.js')
+    script(src='scripts/controllers/ModalHeader.js')
+    script(src='scripts/controllers/JoinNow.js')
+    script(src='scripts/controllers/Account.js')
+    script(src='scripts/controllers/Register.js')
+    script(src='scripts/controllers/Login.js')
+    script(src='scripts/controllers/SendResetPassword.js')
+    script(src='scripts/controllers/Arcade.js')
+    script(src='scripts/controllers/Leaderboard.js')
+    script(src='scripts/controllers/Activities.js')
+    script(src='scripts/directives/blDialogModal.js')
+    // endbuild
+    // Google Analytics: change UA-XXXXX-X to be your site's ID.
+    script
+      var _gaq=[['_setAccount','UA-XXXXX-X'],['_trackPageview']];
+      (function(d,t){var g=d.createElement(t),s=d.getElementsByTagName(t)[0];
+      g.src=('https:'==location.protocol?'//ssl':'//www')+'.google-analytics.com/ga.js';
+      s.parentNode.insertBefore(g,s)}(document,'script'));

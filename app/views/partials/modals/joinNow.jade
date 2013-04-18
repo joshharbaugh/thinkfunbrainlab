@@ -1,0 +1,15 @@
+div.modal-header(data-ng-controller="ModalHeaderCtrl")
+  button.close(type="button", data-dismiss="true", aria-hidden="true", data-ng-click="close()")
+    | x
+div.modal-body#JoinNowModal(data-ng-controller="JoinNow")
+  h3 Join Brain Lab for FREE
+  p Register to play in our Brain Lab Tournaments & sign-up for our world renowned Puzzle Newsletter & other puzzling treats.
+
+  h4 Date of Birth
+  form(data-ng-submit="validatePlayerAge()", id="validatePlayerAgeForm")
+    select.span2(name="verifyMonth", data-ng-model="verifyMonth", ng-options="m.name for m in months")
+
+    input.span2(type="text", maxlength="4", name="verifyYear", data-ng-model="verifyYear", placeholder="ex. 1999")
+
+    button.btn.btn-flat(type="submit")
+      | Continue Registration
