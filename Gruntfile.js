@@ -339,6 +339,7 @@ module.exports = function (grunt) {
     'uglify'
   ]);
 
+  // Build Sandbox Task
   grunt.registerTask('build:sandbox', [
     'clean:dist',
     'coffee',
@@ -354,6 +355,14 @@ module.exports = function (grunt) {
     'usemin',
     'ngmin',
     'uglify'
+  ]);
+
+  // Build Staging Task
+  grunt.registerTask('build:staging', [
+  ]);
+
+  // Build Production Task
+  grunt.registerTask('build:production', [
   ]);
 
   grunt.registerTask('default', ['build:sandbox']);
