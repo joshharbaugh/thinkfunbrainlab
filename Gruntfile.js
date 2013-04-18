@@ -322,7 +322,7 @@ module.exports = function (grunt) {
   grunt.registerTask('build', [
     'clean:dist',
     'jshint',
-    //'test',
+    'test',
     'coffee',
     'compass:dist',
     'jade',
@@ -330,7 +330,7 @@ module.exports = function (grunt) {
     'useminPrepare',
     'imagemin',
     'cssmin',
-    //'htmlmin',
+    'htmlmin',
     'concat',
     'copy',
     'cdnify',
@@ -341,8 +341,6 @@ module.exports = function (grunt) {
 
   grunt.registerTask('build:sandbox', [
     'clean:dist',
-    //'jshint',
-    //'test',
     'coffee',
     'compass:dist',
     'jade',
@@ -350,7 +348,6 @@ module.exports = function (grunt) {
     'useminPrepare',
     'imagemin',
     'cssmin',
-    //'htmlmin',
     'concat',
     'copy',
     'cdnify',
@@ -359,5 +356,5 @@ module.exports = function (grunt) {
     'uglify'
   ]);
 
-  grunt.registerTask('default', ['build']);
+  grunt.registerTask('default', ['build:sandbox']);
 };
